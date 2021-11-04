@@ -30,12 +30,12 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.cmbTipoMantenimiento = new System.Windows.Forms.ComboBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.flpButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -56,65 +56,73 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(18, 18);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(400, 210);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(600, 323);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Servicio";
             // 
-            // label1
+            // cmbTipoMantenimiento
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(82, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Descripcion:";
+            this.cmbTipoMantenimiento.FormattingEnabled = true;
+            this.cmbTipoMantenimiento.Location = new System.Drawing.Point(268, 249);
+            this.cmbTipoMantenimiento.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cmbTipoMantenimiento.Name = "cmbTipoMantenimiento";
+            this.cmbTipoMantenimiento.Size = new System.Drawing.Size(180, 28);
+            this.cmbTipoMantenimiento.TabIndex = 5;
             // 
-            // label2
+            // txtPrecio
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(120, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Precio:";
+            this.txtPrecio.Location = new System.Drawing.Point(268, 158);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(148, 26);
+            this.txtPrecio.TabIndex = 4;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(268, 57);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(264, 47);
+            this.txtDescripcion.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(2, 159);
+            this.label3.Location = new System.Drawing.Point(3, 245);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(174, 21);
+            this.label3.Size = new System.Drawing.Size(273, 32);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tipo de Mantenimiento:";
             // 
-            // txtDescripcion
+            // label2
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(179, 37);
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(177, 32);
-            this.txtDescripcion.TabIndex = 3;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(180, 158);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 32);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Precio:";
             // 
-            // txtPrecio
+            // label1
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(179, 103);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecio.TabIndex = 4;
-            // 
-            // cmbTipoMantenimiento
-            // 
-            this.cmbTipoMantenimiento.FormattingEnabled = true;
-            this.cmbTipoMantenimiento.Location = new System.Drawing.Point(179, 162);
-            this.cmbTipoMantenimiento.Name = "cmbTipoMantenimiento";
-            this.cmbTipoMantenimiento.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoMantenimiento.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(123, 52);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(144, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Descripcion:";
             // 
             // flpButtons
             // 
@@ -127,79 +135,84 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             this.flpButtons.Controls.Add(this.btnGuardar);
             this.flpButtons.Controls.Add(this.btnCancelar);
             this.flpButtons.Controls.Add(this.btnEstado);
-            this.flpButtons.Location = new System.Drawing.Point(11, 227);
-            this.flpButtons.Margin = new System.Windows.Forms.Padding(2);
+            this.flpButtons.Location = new System.Drawing.Point(16, 349);
             this.flpButtons.Name = "flpButtons";
-            this.flpButtons.Size = new System.Drawing.Size(368, 64);
+            this.flpButtons.Size = new System.Drawing.Size(552, 99);
             this.flpButtons.TabIndex = 4;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(2, 2);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregar.Location = new System.Drawing.Point(3, 3);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(88, 29);
+            this.btnAgregar.Size = new System.Drawing.Size(132, 45);
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(94, 2);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Location = new System.Drawing.Point(141, 3);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(88, 29);
+            this.btnEditar.Size = new System.Drawing.Size(132, 45);
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(186, 2);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuardar.Location = new System.Drawing.Point(279, 3);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(88, 29);
+            this.btnGuardar.Size = new System.Drawing.Size(132, 45);
             this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(278, 2);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Location = new System.Drawing.Point(417, 3);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(88, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(132, 45);
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnEstado
             // 
-            this.btnEstado.Location = new System.Drawing.Point(3, 36);
+            this.btnEstado.Location = new System.Drawing.Point(4, 56);
+            this.btnEstado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEstado.Name = "btnEstado";
-            this.btnEstado.Size = new System.Drawing.Size(149, 25);
+            this.btnEstado.Size = new System.Drawing.Size(224, 38);
             this.btnEstado.TabIndex = 4;
             this.btnEstado.Text = "Estado";
             this.btnEstado.UseVisualStyleBackColor = true;
             // 
             // dgvServicio
             // 
+            this.dgvServicio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvServicio.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgvServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvServicio.Location = new System.Drawing.Point(11, 306);
+            this.dgvServicio.GridColor = System.Drawing.Color.Silver;
+            this.dgvServicio.Location = new System.Drawing.Point(16, 471);
+            this.dgvServicio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvServicio.Name = "dgvServicio";
-            this.dgvServicio.Size = new System.Drawing.Size(401, 155);
+            this.dgvServicio.RowHeadersWidth = 62;
+            this.dgvServicio.Size = new System.Drawing.Size(602, 238);
             this.dgvServicio.TabIndex = 5;
             // 
             // FrmServicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 473);
+            this.ClientSize = new System.Drawing.Size(636, 728);
             this.Controls.Add(this.dgvServicio);
             this.Controls.Add(this.flpButtons);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmServicio";
             this.Text = "FrmServicio";
+            this.Load += new System.EventHandler(this.FrmServicio_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.flpButtons.ResumeLayout(false);

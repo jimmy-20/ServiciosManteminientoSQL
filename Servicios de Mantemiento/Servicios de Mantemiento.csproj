@@ -46,9 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CCliente.cs" />
     <Compile Include="Controller\CLogin.cs" />
+    <Compile Include="Controller\CRepuesto.cs" />
+    <Compile Include="Controller\CServicio.cs" />
+    <Compile Include="Controller\CVehiculo.cs" />
+    <Compile Include="Data\DCliente.cs" />
     <Compile Include="Data\DConexion.cs" />
     <Compile Include="Data\DLogin.cs" />
+    <Compile Include="Data\DRepuesto.cs" />
+    <Compile Include="Data\DServicios.cs" />
+    <Compile Include="Data\DVehiculo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Principal\Catalogos\FrmContainers\FrmServicio.resx">
       <DependentUpon>FrmServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Principal\Catalogos\FrmContainers\FrmVehiculo.resx">
+      <DependentUpon>FrmVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Principal\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
