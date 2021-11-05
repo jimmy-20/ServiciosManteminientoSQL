@@ -32,5 +32,18 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
                                  MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            string PNombre = txtPrimerNombre.Text;
+            string SNombre = txtSegundoNombre.Text;
+            string PApellido = txtPrimerApellido.Text;
+            string SApellido = txtSegundoApellido.Text;
+            string telefono = mtbTelefono.Text;
+
+            CCliente.Insertar_Cliente(PNombre, SNombre, PApellido, SApellido, telefono);
+
+            dgvClientes.Refresh();
+        }
     }
 }

@@ -32,5 +32,12 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
                                  MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            
+
+            
+        }
     }
 }

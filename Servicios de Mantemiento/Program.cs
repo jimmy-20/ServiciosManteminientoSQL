@@ -19,7 +19,7 @@ namespace Servicios_de_Mantemiento
             var main = new Form1();
             main.FormClosed += MainForm_Closed;
             main.Show();
-            Application.Run(main);
+            Application.Run();
         }
 
         private static void MainForm_Closed(object sender, FormClosedEventArgs e)
