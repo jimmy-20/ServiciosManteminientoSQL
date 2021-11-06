@@ -158,15 +158,13 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             // 
             // flpButtons
             // 
-            this.flpButtons.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.flpButtons.AutoSize = true;
             this.flpButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flpButtons.Controls.Add(this.btnAgregar);
             this.flpButtons.Controls.Add(this.btnEditar);
             this.flpButtons.Controls.Add(this.btnGuardar);
             this.flpButtons.Controls.Add(this.btnCancelar);
-            this.flpButtons.Location = new System.Drawing.Point(136, 285);
+            this.flpButtons.Location = new System.Drawing.Point(136, 284);
             this.flpButtons.Name = "flpButtons";
             this.flpButtons.Size = new System.Drawing.Size(672, 51);
             this.flpButtons.TabIndex = 2;
@@ -189,6 +187,7 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             this.btnEditar.TabIndex = 1;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -198,6 +197,7 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -207,6 +207,7 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // dgvClientes
             // 

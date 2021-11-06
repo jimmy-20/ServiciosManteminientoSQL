@@ -19,5 +19,10 @@ namespace Servicios_de_Mantemiento.Controller
         {
             DCliente.Insertar_Cliente(PNombre, SNombre, PApellido, SApellido, telefono);
         }
+
+        public static void Editar_Cliente(int IdCliente, string PNombre, string SNombre, string PApellido, string SApellido, string telefono)
+        {
+            DCliente.Editar_Cliente(IdCliente,PNombre,SNombre,PApellido,SApellido,telefono);
+        }
     }
 }

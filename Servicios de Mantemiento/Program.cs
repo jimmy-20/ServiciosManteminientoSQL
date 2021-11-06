@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Servicios_de_Mantemiento.View.Principal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Servicios_de_Mantemiento
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var main = new Form1();
+            var main = new FrmPrincipal();
             main.FormClosed += MainForm_Closed;
             main.Show();
             Application.Run();
