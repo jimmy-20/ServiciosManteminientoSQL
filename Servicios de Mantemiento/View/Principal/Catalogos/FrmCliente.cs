@@ -33,6 +33,8 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
                 MessageBox.Show("Sin datos en la tabla clientes","Servicios de Mantenimientos",
                                  MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
+
+            BotonesCancelOk(false);
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -43,6 +45,8 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             btnAgregar.Visible = false;
 
             dgvClientes.Enabled = false;
+
+            BotonesCancelOk(true);
         }
 
         private void Mostrar()
@@ -53,22 +57,11 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dgvClientes.SelectedRows.Count != 1)
+            if (VerificarFila() == false)
             {
-                if (dgvClientes.SelectedRows.Count > 1)
-                {
-                    MessageBox.Show("Seleccione una sola fila", "Servicios de Mantenimiento",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show("No se ha seleccionado ninguna fila", "Servicios de Mantenimiento",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
                 return;
             }
-
+            
             DataGridViewRow row = dgvClientes.SelectedRows[0];
 
             txtPrimerNombre.Text = (row.Cells[1].Value).ToString();
@@ -84,6 +77,8 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             btnAgregar.Visible = false;
             btnEditar.Visible = false;
             dgvClientes.Enabled = false;
+
+            BotonesCancelOk(true);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -93,6 +88,8 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             btnAgregar.Visible = true;
             btnEditar.Visible = true;
             dgvClientes.Enabled = true;
+
+            BotonesCancelOk(false);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -110,6 +107,25 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             btnAgregar.Visible = true;
             btnEditar.Visible = true;
             dgvClientes.Enabled = true;
+
+            BotonesCancelOk(true);
+        }
+        
+        // Funciones
+        private void btnEstado_Click(object sender, EventArgs e)
+        {
+            if (VerificarFila() == false)
+            {
+                return;
+            }
+
+            DataGridViewRow row = dgvClientes.SelectedRows[0];
+
+            IdCliente = Convert.ToInt32((row.Cells[0].Value).ToString());
+
+            CCliente.Cambiar_Estado(IdCliente);
+
+            Mostrar();
         }
 
         private void Agregar()
@@ -134,7 +150,7 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             string SApellido = txtSegundoApellido.Text;
             string Telefono = mtbTelefono.Text;
 
-            CCliente.Editar_Cliente(IdCliente,PNombre,SNombre,PApellido,SApellido,Telefono);
+            CCliente.Editar_Cliente(IdCliente, PNombre, SNombre, PApellido, SApellido, Telefono);
             btnAgregar.Visible = false;
             btnEditar.Visible = false;
 
@@ -149,6 +165,86 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             txtSegundoApellido.Clear();
 
             mtbTelefono.Clear();
+        }
+
+        private bool VerificarFila()
+        {
+            if (dgvClientes.SelectedRows.Count != 1)
+            {
+                if (dgvClientes.SelectedRows.Count > 1)
+                {
+                    MessageBox.Show("Seleccione una sola fila", "Servicios de Mantenimiento",
+                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("No se ha seleccionado ninguna fila", "Servicios de Mantenimiento",
+                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                return false;
+            }
+
+            return true;
+        }
+
+        private void BotonesCancelOk(bool flag)
+        {
+
+            if (flag == true)
+            {
+                btnGuardar.Visible = true;
+                btnCancelar.Visible = true;
+                btnEstado.Visible = false;
+            }
+            else
+            {
+                btnGuardar.Visible = false;
+                btnCancelar.Visible = false;
+                btnEstado.Visible = true;
+            }
+            
+        }
+
+        private void EsCaracter(KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+            if (!(char.IsLetter(c)) && (c != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtPrimerNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            EsCaracter(e);
+        }
+
+        private void txtPrimerApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            EsCaracter(e);
+        }
+
+        private void txtSegundoApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            EsCaracter(e);
+        }
+
+        private void txtSegundoNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+            if ( ( !(char.IsLetter(c)) && (c != (char)Keys.Back) ))
+            {
+                if (c ==  (char)Keys.Space)
+                {
+                    return;
+                }
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

@@ -10,4 +10,7 @@ CREATE PROCEDURE Insertar_Repuesto @Descripcion varchar(50), @Marca varchar(50),
 AS
 INSERT INTO Repuesto VALUES (@Descripcion, @Marca, @Modelo, @Cantidad, @Precio)
 
-SELECT * FROM Cliente
+CREATE PROCEDURE Insertar_Vehiculo @IdCliente int, @Marca varchar(50), @Modelo varchar(50), @Año int 
+AS
+INSERT INTO Vehiculo VALUES (@IdCliente,@Marca,@Modelo,@Año)
+

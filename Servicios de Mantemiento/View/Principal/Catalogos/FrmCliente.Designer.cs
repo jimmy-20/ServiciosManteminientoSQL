@@ -46,6 +46,8 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.btnEstado = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.flpButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -53,6 +55,7 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.Controls.Add(this.mtbTelefono);
             this.groupBox1.Controls.Add(this.txtSegundoApellido);
             this.groupBox1.Controls.Add(this.txtSegundoNombre);
@@ -84,6 +87,7 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             this.txtSegundoApellido.Name = "txtSegundoApellido";
             this.txtSegundoApellido.Size = new System.Drawing.Size(223, 26);
             this.txtSegundoApellido.TabIndex = 8;
+            this.txtSegundoApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoApellido_KeyPress);
             // 
             // txtSegundoNombre
             // 
@@ -91,6 +95,7 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             this.txtSegundoNombre.Name = "txtSegundoNombre";
             this.txtSegundoNombre.Size = new System.Drawing.Size(223, 26);
             this.txtSegundoNombre.TabIndex = 7;
+            this.txtSegundoNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSegundoNombre_KeyPress);
             // 
             // txtPrimerApellido
             // 
@@ -98,6 +103,7 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.Size = new System.Drawing.Size(223, 26);
             this.txtPrimerApellido.TabIndex = 6;
+            this.txtPrimerApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerApellido_KeyPress);
             // 
             // txtPrimerNombre
             // 
@@ -105,6 +111,7 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             this.txtPrimerNombre.Name = "txtPrimerNombre";
             this.txtPrimerNombre.Size = new System.Drawing.Size(223, 26);
             this.txtPrimerNombre.TabIndex = 5;
+            this.txtPrimerNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrimerNombre_KeyPress);
             // 
             // label5
             // 
@@ -164,9 +171,10 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             this.flpButtons.Controls.Add(this.btnEditar);
             this.flpButtons.Controls.Add(this.btnGuardar);
             this.flpButtons.Controls.Add(this.btnCancelar);
-            this.flpButtons.Location = new System.Drawing.Point(136, 284);
+            this.flpButtons.Controls.Add(this.btnEstado);
+            this.flpButtons.Location = new System.Drawing.Point(58, 284);
             this.flpButtons.Name = "flpButtons";
-            this.flpButtons.Size = new System.Drawing.Size(672, 51);
+            this.flpButtons.Size = new System.Drawing.Size(832, 51);
             this.flpButtons.TabIndex = 2;
             // 
             // btnAgregar
@@ -219,6 +227,24 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
             this.dgvClientes.Size = new System.Drawing.Size(914, 335);
             this.dgvClientes.TabIndex = 3;
             // 
+            // btnEstado
+            // 
+            this.btnEstado.Location = new System.Drawing.Point(675, 3);
+            this.btnEstado.Name = "btnEstado";
+            this.btnEstado.Size = new System.Drawing.Size(154, 45);
+            this.btnEstado.TabIndex = 4;
+            this.btnEstado.Text = "Estado";
+            this.btnEstado.UseVisualStyleBackColor = true;
+            this.btnEstado.Click += new System.EventHandler(this.btnEstado_Click);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(487, 215);
+            this.maskedTextBox1.Mask = "(5O5)0000-0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(207, 26);
+            this.maskedTextBox1.TabIndex = 10;
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -258,5 +284,7 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.Button btnEstado;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }

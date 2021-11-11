@@ -183,5 +183,35 @@ namespace Servicios_de_Mantemiento.Data
                 MessageBox.Show("Error: " + e.Message, "Error interno en BD", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public static void Cambiar_Estado(int IdCliente)
+        {
+            try
+            {
+                SqlConnection conexion = DConexion.Open();
+
+                SqlCommand comando = new SqlCommand()
+                {
+                    Connection = conexion,
+                    CommandText = "Cambiar_Estado",
+                    CommandType = CommandType.StoredProcedure
+                };
+
+                SqlParameter parametro1 = new SqlParameter()
+                {
+                    ParameterName = "IdCliente",
+                    SqlDbType = SqlDbType.Int,
+                    Value = IdCliente
+                };
+
+                comando.Parameters.Add(parametro1);
+
+                comando.ExecuteNonQuery();
+
+            }catch(Exception e)
+            {
+                MessageBox.Show("Error: " + e.Message, "Error interno en BD", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

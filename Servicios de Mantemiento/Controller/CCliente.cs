@@ -24,5 +24,10 @@ namespace Servicios_de_Mantemiento.Controller
         {
             DCliente.Editar_Cliente(IdCliente,PNombre,SNombre,PApellido,SApellido,telefono);
         }
+
+        public static void Cambiar_Estado(int IdCliente)
+        {
+            DCliente.Cambiar_Estado(IdCliente);
+        }
     }
 }
