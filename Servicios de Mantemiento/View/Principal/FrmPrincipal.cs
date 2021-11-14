@@ -1,4 +1,5 @@
-﻿using Servicios_de_Mantemiento.View.Principal.FrmContainers;
+﻿using Servicios_de_Mantemiento.View.Operaciones;
+using Servicios_de_Mantemiento.View.Principal.FrmContainers;
 using Servicios_de_Mantemiento.View.Principal.Seguridad;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,9 @@ namespace Servicios_de_Mantemiento.View.Principal
 
         private void matenimientoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmMantenimiento frmMantenimiento = new FrmMantenimiento();
+            frmMantenimiento.MdiParent = this;
+            frmMantenimiento.Show();
         }
 
         private void toolStripSeparator1_Click(object sender, EventArgs e)
