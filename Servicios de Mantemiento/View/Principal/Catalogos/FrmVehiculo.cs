@@ -7,6 +7,7 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
 {
     public partial class FrmVehiculo : Form
     {
+        private int IdVehiculo;
         private int IdCliente;
         private bool flag;
         public FrmVehiculo()
@@ -46,6 +47,9 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
                 MessageBox.Show("La tabla Clientes no contiene datos a mostrar", "Servicios de Mantenimiento",
                                  MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+
+            btnGuardar.Visible = false;
+            btnCancelar.Visible = false;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -57,43 +61,54 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
 
         private void btnAsignar_Click(object sender, EventArgs e)
         {
-            SeleccionarFila(dgvClientes);           
+            if (!SeleccionarFila(dgvClientes))
+            {
+                return;
+            }
+
+            DataGridViewRow row = dgvClientes.SelectedRows[0];
+
+            IdCliente = Convert.ToInt32(row.Cells[0].Value.ToString());
+
+            txtCliente.Text = row.Cells[1].Value.ToString() + " " + row.Cells[3].Value.ToString();
         }
 
-        private void SeleccionarFila(DataGridView data)
+        private bool SeleccionarFila(DataGridView data)
         {
             if (data.SelectedRows.Count != 1)
             {
                 if (data.SelectedRows.Count == 0)
                 {
-                    MessageBox.Show("Seleccione una fila para el vehiculo", "Servicio de Mantenimiento");
-                    return;
+                    MessageBox.Show("Seleccione una fila para el vehiculo", "Servicio de Mantenimiento",
+                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
 
-                MessageBox.Show("Seleccione solamente una fila", "Servicios de Mantenimiento");
-                return;
+                MessageBox.Show("Seleccione solamente una fila", "Servicios de Mantenimiento",
+                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
+
+            BotonesVisibles();
+            return true;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            string Marca = txtMarca.Text;
+            string Modelo = txtModelo.Text;
+            int Año = ((int)nudAnio.Value);
+
             if (flag == true)
             {
-                string Marca = txtMarca.Text;
-                string Modelo = txtModelo.Text;
-                int Año = ((int)nudAnio.Value);
-
                 CVehiculo.Insertar_Vehiculo(IdCliente, Marca, Modelo, Año);
             }
             else
-            {
-                DataGridViewRow row = dgvClientes.SelectedRows[0];
-
-                IdCliente = Convert.ToInt32(row.Cells[0].Value.ToString());
-
-                txtCliente.Text = row.Cells[1].Value.ToString() + " " + row.Cells[3].Value.ToString();
+            {                
+                CVehiculo.Editar_Vehiculo(IdVehiculo, IdCliente, Marca, Modelo, Año);
             }
 
+            ClearTxt();
             Mostrar();
         }
 
@@ -106,10 +121,12 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
 
                 btnGuardar.Visible = false;
                 btnCancelar.Visible = false;
+                btnEstado.Visible = true;
                 return;
             }
             btnAgregar.Visible = false;
             btnEditar.Visible = false;
+            btnEstado.Visible = false;
 
             btnGuardar.Visible = true;
             btnCancelar.Visible = true;
@@ -117,13 +134,40 @@ namespace Servicios_de_Mantemiento.View.Principal.FrmContainers
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            BotonesVisibles();
+            if (!SeleccionarFila(dgvVehiculos)){
+                return;
+            }
+
             flag = false;
+
+            DataGridViewRow row = dgvVehiculos.SelectedRows[0];
+
+            IdVehiculo = Convert.ToInt32(row.Cells[0].Value);
+            IdCliente = Convert.ToInt32(row.Cells[1].Value);
+
+            string cliente = row.Cells[2].Value.ToString();
+            string marca = row.Cells[3].Value.ToString();
+            string modelo = row.Cells[4].Value.ToString();
+            string anio = row.Cells[5].Value.ToString();
+
+            txtCliente.Text = cliente;
+            txtMarca.Text = marca;
+            txtModelo.Text = modelo;
+            nudAnio.Value = Convert.ToInt32(anio);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             BotonesVisibles();
+            ClearTxt();
+        }
+
+        private void ClearTxt()
+        {
+            txtCliente.Clear();
+            txtMarca.Clear();
+            txtModelo.Clear();
+            nudAnio.Value = nudAnio.Minimum;
         }
     }
 }
